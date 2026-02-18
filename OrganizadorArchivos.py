@@ -36,6 +36,9 @@ class OrganizadorArchivos(QMainWindow):
 
         self.botonOrdenar.clicked.connect(self.organizar_archivos)
         self.botonRuta.clicked.connect(self.seleccionar_carpeta)
+        self.actionLicencia.triggered.connect(self.Licencia)
+        self.actionAcerca_de.triggered.connect(self.AcercaDe)
+        self.actionComo_usar.triggered.connect(self.ComoUsar)
 
     def organizar_archivos(self): # Método para organizar los archivos en la carpeta seleccionada
         try:
@@ -71,7 +74,16 @@ class OrganizadorArchivos(QMainWindow):
         else:
             QMessageBox.warning(self, "Error", "No se seleccionó ninguna carpeta.")
 
+    def Licencia(self): # Método para mostrar la licencia del programa
+        QMessageBox.information(self, "Licencia", "Este programa es libre de uso.\nDesarrollado por Gonzalo Cusmai.\nSoftware sin fines de lucro.")
+
+    def AcercaDe(self): # Método para mostrar información sobre el programa
+        QMessageBox.information(self, "Acerca de", "Organizador de Archivos por Extensión\nDesarrollado por Gonzalo Cusmai\nVersión 1.0")
+
+    def ComoUsar(self): # Método para mostrar instrucciones de uso del programa
+        QMessageBox.information(self, "Cómo usar", "1. Haz clic en 'Seleccionar Carpeta' para elegir la carpeta que deseas organizar.\n2. Haz clic en 'Ordenar Archivos' para organizar los archivos por extensión.\n3. Los archivos se moverán a subcarpetas según su tipo.")
 app = QApplication(sys.argv)
 ventana = OrganizadorArchivos()
+ventana.setWindowTitle("Organizador de Archivos por Extensión")
 ventana.show()
 app.exec()
