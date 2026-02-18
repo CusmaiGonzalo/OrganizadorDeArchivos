@@ -37,8 +37,29 @@ class OrganizadorArchivos(QMainWindow):
         self.botonOrdenar.clicked.connect(self.organizar_archivos)
         self.botonRuta.clicked.connect(self.seleccionar_carpeta)
 
-    def organizar_archivos(self):
-        pass
+    def organizar_archivos(self): # Método para organizar los archivos en la carpeta seleccionada
+        try:
+            for carpeta in  set(self.extensiones.keys()):
+                ruta_carpeta = os.path.join(self.carpeta, carpeta)
+                if not os.path.exists(ruta_carpeta):
+                    os.makedirs(ruta_carpeta)
+        
+            for archivo in os.listdir(self.carpeta):
+                ruta_archivo = os.path.join(self.carpeta, archivo)
+                if os.path.isfile(ruta_archivo):
+                    extension = os.path.splitext(archivo)[1].lower()
+                    movido = False
+                    for categoria, ext_list in self.extensiones.items():
+                        if extension in ext_list:
+                            shutil.move(ruta_archivo, os.path.join(self.carpeta, categoria, archivo))
+                            movido = True
+                            break
+                    if not movido:
+                        shutil.move(ruta_archivo, os.path.join(self.carpeta, "Otros", archivo))
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Ocurrió un error al organizar los archivos: {str(e)}")
+        finally:
+            QMessageBox.information(self, "Éxito", "Archivos organizados correctamente.")
 
     def seleccionar_carpeta(self): # Método para seleccionar la carpeta a organizar
         carpeta = QFileDialog.getExistingDirectory(self, "Seleccionar Carpeta")
