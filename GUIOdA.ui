@@ -89,77 +89,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string> • Documentos PDF </string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string> • Documentos Word</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string> • Hojas de calculo</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string> • Presentaciones</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string> • Imágenes</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string> • Videos</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_11">
-       <property name="text">
-        <string> • Audio</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string> • Archivos Comprimidos</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_13">
-       <property name="text">
-        <string> • Código Fuente</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_10">
-       <property name="text">
-        <string> • Ejecutables</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string> • Otros</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -205,29 +135,27 @@
      <x>0</x>
      <y>0</y>
      <width>966</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
     <property name="title">
      <string>Archivo</string>
     </property>
+    <addaction name="actionCerrar_Aplicaci_n"/>
    </widget>
    <widget class="QMenu" name="menuHerramientas">
     <property name="title">
      <string>Herramientas</string>
     </property>
-    <addaction name="actionComo_usar"/>
-    <addaction name="separator"/>
     <addaction name="actionAgregar_Carpetas"/>
-    <addaction name="actionQuitar_Carpetas"/>
-    <addaction name="actionModificar_Carpetas"/>
-    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
      <string>Ayuda</string>
     </property>
+    <addaction name="actionComo_usar"/>
+    <addaction name="separator"/>
     <addaction name="actionLicencia"/>
     <addaction name="actionAcerca_de"/>
    </widget>
@@ -253,17 +181,12 @@
   </action>
   <action name="actionAgregar_Carpetas">
    <property name="text">
-    <string>Agregar Carpetas</string>
+    <string>Gestionar Carpetas</string>
    </property>
   </action>
-  <action name="actionQuitar_Carpetas">
+  <action name="actionCerrar_Aplicaci_n">
    <property name="text">
-    <string>Quitar Carpetas</string>
-   </property>
-  </action>
-  <action name="actionModificar_Carpetas">
-   <property name="text">
-    <string>Modificar Carpetas</string>
+    <string>Cerrar Aplicación</string>
    </property>
   </action>
  </widget>
